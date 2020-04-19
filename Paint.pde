@@ -58,10 +58,9 @@ void mouseReleased()
   }
 }
 
-
 void controlEvent(ControlEvent event) 
 {
-  if (event.isFrom("MENU")) 
+  if (event.isFrom("menu")) 
   {
     if (showMenu == false)
     {
@@ -77,14 +76,14 @@ void controlEvent(ControlEvent event)
   
   else if (event.isFrom("clear")) 
   {
-    if (backups.size() > 1)
-    { 
-        background = backups.get(0);   
-        do 
-          backups.remove(backups.size()-1);
-        while (backups.size() != 1);
+        background = backups.get(0);
+        if (backups.size() > 1)
+        {
+          do 
+            backups.remove(backups.size()-1);
+          while (backups.size() != 1);
+        }
         set(0, 0, background);
-    }
   }
   
   else if (event.isFrom("save"))
@@ -93,7 +92,7 @@ void controlEvent(ControlEvent event)
        + String.valueOf(hour()) + "_" + String.valueOf(minute()) + "_" + String.valueOf(second());
      showMenu = false;
      manageMenu();
-     PImage partialSave = get(0, 0, width, height - cp5.get("MENU").getHeight());
+     PImage partialSave = get(0, 0, width, height - cp5.get("menu").getHeight());
      partialSave.save(title + ".jpg");
      showMenu = true;
      manageMenu();
@@ -147,18 +146,22 @@ void controlEvent(ControlEvent event)
     rValue = 255;
     gValue = 255;
     bValue = 255;
+    aValue = 255;
     cp5.get("redSlider").setValue(rValue);
     cp5.get("greenSlider").setValue(gValue);
     cp5.get("blueSlider").setValue(bValue);
+    cp5.get("alphaSlider").setValue(aValue);
   }
   else if (event.isFrom("silver"))
   {
     rValue = 192;
     gValue = 192;
     bValue = 192;
+    aValue = 255;
     cp5.get("redSlider").setValue(rValue);
     cp5.get("greenSlider").setValue(gValue);
     cp5.get("blueSlider").setValue(bValue);
+    cp5.get("alphaSlider").setValue(aValue);
   }
   
   else if (event.isFrom("grey"))
@@ -166,9 +169,11 @@ void controlEvent(ControlEvent event)
     rValue = 128;
     gValue = 128;
     bValue = 128;
+    aValue = 255;
     cp5.get("redSlider").setValue(rValue);
     cp5.get("greenSlider").setValue(gValue);
     cp5.get("blueSlider").setValue(bValue);
+    cp5.get("alphaSlider").setValue(aValue);
   }
   
   else if (event.isFrom("black"))
@@ -176,9 +181,11 @@ void controlEvent(ControlEvent event)
     rValue = 0;
     gValue = 0;
     bValue = 0;
+    aValue = 0;
     cp5.get("redSlider").setValue(rValue);
     cp5.get("greenSlider").setValue(gValue);
     cp5.get("blueSlider").setValue(bValue);
+    cp5.get("alphaSlider").setValue(aValue);
   }
   
   else if (event.isFrom("red"))
@@ -186,9 +193,11 @@ void controlEvent(ControlEvent event)
     rValue = 255;
     gValue = 0;
     bValue = 0;
+    aValue = 255;
     cp5.get("redSlider").setValue(rValue);
     cp5.get("greenSlider").setValue(gValue);
     cp5.get("blueSlider").setValue(bValue);
+    cp5.get("alphaSlider").setValue(aValue);
   }
   
   else if (event.isFrom("maroon"))
@@ -196,9 +205,11 @@ void controlEvent(ControlEvent event)
     rValue = 128;
     gValue = 0;
     bValue = 0;
+    aValue = 255;
     cp5.get("redSlider").setValue(rValue);
     cp5.get("greenSlider").setValue(gValue);
     cp5.get("blueSlider").setValue(bValue);
+    cp5.get("alphaSlider").setValue(aValue);
   }
   
   else if (event.isFrom("yellow"))
@@ -206,9 +217,11 @@ void controlEvent(ControlEvent event)
     rValue = 255;
     gValue = 255;
     bValue = 0;
+    aValue = 255;
     cp5.get("redSlider").setValue(rValue);
     cp5.get("greenSlider").setValue(gValue);
     cp5.get("blueSlider").setValue(bValue);
+    cp5.get("alphaSlider").setValue(aValue);
   }
   
   else if (event.isFrom("olive"))
@@ -216,9 +229,11 @@ void controlEvent(ControlEvent event)
     rValue = 128;
     gValue = 128;
     bValue = 0;
+    aValue = 255;
     cp5.get("redSlider").setValue(rValue);
     cp5.get("greenSlider").setValue(gValue);
     cp5.get("blueSlider").setValue(bValue);
+    cp5.get("alphaSlider").setValue(aValue);
   }
   
   else if (event.isFrom("lime"))
@@ -226,9 +241,11 @@ void controlEvent(ControlEvent event)
     rValue = 0;
     gValue = 255;
     bValue = 0;
+    aValue = 255;
     cp5.get("redSlider").setValue(rValue);
     cp5.get("greenSlider").setValue(gValue);
     cp5.get("blueSlider").setValue(bValue);
+    cp5.get("alphaSlider").setValue(aValue);
   }
   
   else if (event.isFrom("green"))
@@ -236,9 +253,11 @@ void controlEvent(ControlEvent event)
     rValue = 0;
     gValue = 128;
     bValue = 0;
+    aValue = 255;
     cp5.get("redSlider").setValue(rValue);
     cp5.get("greenSlider").setValue(gValue);
     cp5.get("blueSlider").setValue(bValue);
+    cp5.get("alphaSlider").setValue(aValue);
   }
     
   else if (event.isFrom("aqua"))
@@ -246,9 +265,11 @@ void controlEvent(ControlEvent event)
     rValue = 0;
     gValue = 255;
     bValue = 255;
+    aValue = 255;
     cp5.get("redSlider").setValue(rValue);
     cp5.get("greenSlider").setValue(gValue);
     cp5.get("blueSlider").setValue(bValue);
+    cp5.get("alphaSlider").setValue(aValue);
   }
   
   else if (event.isFrom("teal"))
@@ -256,9 +277,11 @@ void controlEvent(ControlEvent event)
     rValue = 0;
     gValue = 128;
     bValue = 128;
+    aValue = 255;
     cp5.get("redSlider").setValue(rValue);
     cp5.get("greenSlider").setValue(gValue);
     cp5.get("blueSlider").setValue(bValue);
+    cp5.get("alphaSlider").setValue(aValue);
   }
     
   else if (event.isFrom("blue"))
@@ -266,9 +289,11 @@ void controlEvent(ControlEvent event)
     rValue = 0;
     gValue = 0;
     bValue = 255;
+    aValue = 255;
     cp5.get("redSlider").setValue(rValue);
     cp5.get("greenSlider").setValue(gValue);
     cp5.get("blueSlider").setValue(bValue);
+    cp5.get("alphaSlider").setValue(aValue);
   }
   
   else if (event.isFrom("navy"))
@@ -276,9 +301,11 @@ void controlEvent(ControlEvent event)
     rValue = 0;
     gValue = 0;
     bValue = 128;
+    aValue = 255;
     cp5.get("redSlider").setValue(rValue);
     cp5.get("greenSlider").setValue(gValue);
     cp5.get("blueSlider").setValue(bValue);
+    cp5.get("alphaSlider").setValue(aValue);
   }
   
   else if (event.isFrom("pink"))
@@ -286,9 +313,11 @@ void controlEvent(ControlEvent event)
     rValue = 255;
     gValue = 0;
     bValue = 255;
+    aValue = 255;
     cp5.get("redSlider").setValue(rValue);
     cp5.get("greenSlider").setValue(gValue);
     cp5.get("blueSlider").setValue(bValue);
+    cp5.get("alphaSlider").setValue(aValue);
   }
   
   else if (event.isFrom("purple"))
@@ -296,9 +325,11 @@ void controlEvent(ControlEvent event)
     rValue = 128;
     gValue = 0;
     bValue = 128;
+    aValue = 255;
     cp5.get("redSlider").setValue(rValue);
     cp5.get("greenSlider").setValue(gValue);
     cp5.get("blueSlider").setValue(bValue);
+    cp5.get("alphaSlider").setValue(aValue);
   }
   
   currentColor = color(rValue, gValue, bValue, aValue);
@@ -310,15 +341,15 @@ void manageMenu()
    if (showMenu)
    {
       background = get();
-      cp5.get("MENU").setPosition(0, menuHeight - cp5.get("MENU").getHeight());
+      cp5.get("menu").setPosition(0, menuHeight - cp5.get("menu").getHeight());
       menuGroup.show();
    }
    else 
    {
-      cp5.get("MENU").setPosition(0, height - cp5.get("MENU").getHeight());
+      cp5.get("menu").setPosition(0, height - cp5.get("menu").getHeight());
       menuGroup.hide();
       for (int i=0; i<width; i++)
-        for (int j=height - menuHeight - cp5.get("MENU").getHeight(); j<height; j++)
+        for (int j=height - menuHeight - cp5.get("menu").getHeight(); j<height; j++)
           set(i, j, background.get(i,j));
    }
 }
@@ -334,8 +365,10 @@ void setUpGUI()
       .setBackgroundHeight(menuHeight+1)
       ;
       
-   cp5.addButton("MENU")
+   cp5.addButton("menu")
+       .setBroadcast(false)
        .setSize(menuWidth, menuHeight/10)
+       .setBroadcast(true)
        ;
    
       
@@ -456,7 +489,7 @@ void setUpGUI()
        
    cp5.addButton("clear")
        .setBroadcast(false)
-       .setSize(6*menuWidth/15, width/15)
+       .setSize(6*menuWidth/15, menuWidth/15)
        .setPosition(8*menuWidth/15, menuHeight/4)
        .setGroup(menuGroup)
        .setBroadcast(true)
@@ -478,11 +511,11 @@ void setUpGUI()
        .setBroadcast(true)
        ;
     
-    setupColorButtons();
+    setUpColorButtons();
     manageMenu();
 }
 
-void setupColorButtons()
+void setUpColorButtons()
 {
   
   cp5.addButton("white")
@@ -685,7 +718,7 @@ void setupColorButtons()
      .setSize(menuWidth/15, menuHeight/15)
      .setGroup(menuGroup)
      .setValue(1)
-     .setPosition(menuWidth/13 + 3*width/12, menuHeight/1.65 + 3*menuHeight/12)
+     .setPosition(menuWidth/13 + 3*menuWidth/12, menuHeight/1.65 + 3*menuHeight/12)
      .setLabelVisible(false)
      .setColorActive(color(128, 0, 128))
      .setColorForeground(color(128, 0, 128))
