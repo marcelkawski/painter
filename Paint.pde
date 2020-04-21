@@ -76,14 +76,12 @@ void controlEvent(ControlEvent event)
   
   else if (event.isFrom("clear")) 
   {
-        background = backups.get(0);
-        if (backups.size() > 1)
-        {
-          do 
-            backups.remove(backups.size()-1);
-          while (backups.size() != 1);
-        }
-        set(0, 0, background);
+       background = backups.get(0);
+       while (backups.size() > 1)
+       {
+         backups.remove(backups.size()-1);
+       }
+       set(0, 0, background);
   }
   
   else if (event.isFrom("save"))
