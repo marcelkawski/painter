@@ -1,0 +1,21 @@
+# processing, code, AndroidManifest.xml, Marcel_Kawski_Paint_documentation.odt
+
+# code
+/code/
+
+# AndroidManifest.xml
+AndroidManifest.xml
+
+# Marcel_Kawski_Paint_documentation.odt 
+Marcel_Kawski_Paint_documentation.odt
+
+.DS_Store
+applet
+application.linux-arm64
+application.linux-armv6hf
+application.linux32
+application.linux64
+application.windows32
+application.windows64
+application.macosx
+out
