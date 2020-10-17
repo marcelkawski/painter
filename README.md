@@ -12,7 +12,7 @@ Drawing application
 Project made for the subject Applications for Mobile Devices on the Universitat de Valencia during my Erasmus+ exchange. The project was made to get familiar with prototyping mobile applications using Processing.
 
 ## Screenshots
-![screenshot1](img/screenshot1.jpg)
+![screenshot1](img/screenshot1.png)
 
 ## Technologies
 * Processing - version 3.5.4
